@@ -2,14 +2,17 @@ import streamlit as st
 from modules import functions
 
 todos = functions.get_todos()
+
+
 def add_todo():
-    todo = st.session_state["new_todo"] +"\n"
+    todo = st.session_state["new_todo"] + "\n"
     todos.append(todo)
     functions.write_todos(todos)
 
+
 st.title('My ToDo App')
-st.subheader("This is a badass MFin' ToDo App ")
-st.write('This app is to organize ur shit !, to get yo ass straight.')
+st.subheader("This is my ToDo App ")
+st.write('This app is to get your shit straight!')
 
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
