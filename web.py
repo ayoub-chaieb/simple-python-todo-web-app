@@ -15,7 +15,7 @@ st.subheader("This is my ToDo App ")
 st.write('This app is to get your shit straight!')
 
 for index, todo in enumerate(todos):
-    checkbox = st.checkbox(todo, key=index)
+    checkbox = st.checkbox(todo, key=index+1)
     if checkbox:
         todos.pop(index)
         functions.write_todos(todos)
